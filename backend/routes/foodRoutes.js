@@ -40,7 +40,7 @@
 
 import express from "express";
 import multer from "multer";
-import { addFood , listFood , removeFood } from "../controllers/foodControler.js";
+import { addFood , listFood , removeFood, searchFood } from "../controllers/foodControler.js";
 
 const foodRouter = express.Router();
 
@@ -64,6 +64,8 @@ foodRouter.get("/list", listFood);
 //Route to delete food item
 
 foodRouter.post("/remove", removeFood);
+
+foodRouter.get("/search", searchFood);
 
 export default foodRouter;
 

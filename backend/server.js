@@ -2,7 +2,10 @@ import express from "express"
 import cors from"cors"
 import { connect_Db } from "./Config/db.js";
 import foodRouter from "./routes/foodRoutes.js";
-
+import userRouter from "./routes/userRoutes.js";
+import 'dotenv/config';
+import cartRouter from "./routes/cartRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
 
 //iKYIOR6qKcF2AFXh
 //rdsoham5_db_user
@@ -32,10 +35,13 @@ app.use(cors());
  //api endpoint
  app.use("/api/food", foodRouter)
  app.use("/images", express.static('upload')) // i mounted the upload folder on the /image route ..mow i can access image as 
-                                              //http://localhost:4000 /images/file_name .. that we have decided 
+app.use("/api/user" , userRouter)     
+app.use("/api/cart",cartRouter)    
+app.use("/api/order",orderRouter);  
+                               //http://localhost:4000 /images/file_name .. that we have decided 
  
 
 app.get("/", (req, res)=>{res.send("API working")})
 
- app.listen(port,()=>{console.log(`Server started on http://localhost:${port} `)})
+ app.listen(port,()=>{console.log(`Server started on http://localhost:${port}`)})
   

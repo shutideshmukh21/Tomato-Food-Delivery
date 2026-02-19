@@ -8,14 +8,14 @@ import React from 'react'
 import { StoreContext } from '../Contexts/StoreContext'
 
 const FoodItem = ({id, name , price , description , image}) => {
-  const{cartItems , setCartItems,addToCart,removeFromCart} = useContext(StoreContext)
+  const{cartItems , setCartItems,addToCart,removeFromCart , url} = useContext(StoreContext)
   
     const [itemCount, setItemCount]= useState(0);
 
     return(
     <div className='food-item'>
         <div className='food-item-img-container'>
-          <img className='food-item-img' src={image} alt=""/>
+          <img className='food-item-img' src={url+"/images/"+image} alt=""/>
 
           {
             !cartItems[id]

@@ -25,9 +25,8 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-const Add = () => {
+const Add = ({url}) => {
 
-    const url = "http://localhost:4000";
 const [image , setImage] = useState(false);
 const [data, setData] = useState({
     name :"",
@@ -68,6 +67,10 @@ toast.success(response.data.message);
 
 };
 
+//here label htmlFor is user to give label to input block ...click or hovering label ighlight the input bx...we connect both usinh htmlFor and id
+//URL.createObjectURL is a browser api...as image here is file bject nd in src we cant give obj..it needs url
+//this this fn creates a temporary url fr preview..it is for preview onlyy
+
   return (
     <div  className='add'>
    <form className= 'flex-col' onSubmit = {onSubmitHandler}>
@@ -104,7 +107,7 @@ toast.success(response.data.message);
         </div>
         <div className='add-price flex-col'>
             <p>Product Price</p>
-            <input onChange={onChangeHandler} value ={data.price}  type = 'number' name ='price' placeholder='$20'></input>
+            <input onChange={onChangeHandler} value ={data.price}  type = 'number' name ='price' placeholder='$20'/>
         </div>
     </div>
             <button type = 'submit' className = 'add-button'>ADD</button>
