@@ -7,13 +7,7 @@ import 'dotenv/config';
 import cartRouter from "./routes/cartRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 
-//iKYIOR6qKcF2AFXh
-//rdsoham5_db_user
 
-//mongodb+srv://rdsoham5_db_user:iKYIOR6qKcF2AFXh@clusterfooddelivery.iv7bnov.mongodb.net/?retryWrites=true&w=majority&appName=ClusterFoodDelivery
-
-//103.215.148.68/32 - ip address to access database  - this allows ony one ipp adress to access ur db
-//0.0.0.0/0 - enables to access the aip address from anywre - this allows all the ip addresses to access uer db 
 
 
 // app config
