@@ -9,7 +9,7 @@ import LoginPopup from './components/LoginPopUp/LoginPopup'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyOrders from './pages/MyOrders/MyOrders'
-import SearchResult from './components/searchResult/searchResult'
+import SearchResult from './components/searchResult/SearchResult'
 
 
 const App = () => {
